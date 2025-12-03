@@ -19,8 +19,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Build Docker image
-      run: docker build -t bot-leurre:latest .
+    - name: Build Docker image with token
+      run: |
+        docker build \
+          --build-arg GITHUB_TOKEN=${{ secrets.GH_PAT }} \
+          -t bot-leurre:latest .
 
     - name: Run bot container
       run: |
