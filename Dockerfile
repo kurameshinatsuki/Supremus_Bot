@@ -19,4 +19,4 @@ RUN npm install --production --legacy-peer-deps
 
 EXPOSE 8000
 
-CMD ["npm", "start"]
+CMD ["pm2-runtime", "index.js"]
