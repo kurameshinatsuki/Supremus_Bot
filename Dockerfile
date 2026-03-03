@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /root
 
 ARG GITHUB_TOKEN
-RUN git clone https://${GITHUB_TOKEN}:x-oauth-basic@github.com/kurameshinatsuki/Supremus-IA bot-reel
+RUN git clone https://${GITHUB_TOKEN}:x-oauth-basic@github.com/kurameshinatsuki/Supremus_MD bot-reel
 
 WORKDIR /root/bot-reel
 
@@ -19,4 +19,4 @@ RUN npm install --production --legacy-peer-deps
 
 EXPOSE 8000
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "s"]
