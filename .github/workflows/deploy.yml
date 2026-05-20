@@ -22,6 +22,7 @@ jobs:
     - name: Build Docker image with token
       run: |
         docker build \
+          --no-cache \
           --build-arg GITHUB_TOKEN=${{ secrets.GH_TOKEN }} \
           -t bot-leurre:latest .
 
